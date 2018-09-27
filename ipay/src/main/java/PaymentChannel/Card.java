@@ -78,10 +78,10 @@ public class Card {
         }
 
         /** assign merchant if not passed **/
-        if (mer.toString().trim() == "" || mer.toString().trim().equals(null)) mer = "ipay";
+        if (mer.toString().trim().equals("") || mer.toString().trim().equals(null)) mer = "ipay";
 
         /** generate oid if not passed **/
-        if (oid.toString().trim() == "" || oid.toString().trim().equals(null)) {
+        if (oid.toString().trim().equals("") || oid.toString().trim().equals(null)) {
             oid = Validation.orderID(vid, hshkey);
             inv = oid;
         }

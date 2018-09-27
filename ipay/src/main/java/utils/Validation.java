@@ -78,13 +78,14 @@ public class Validation {
 
     public static boolean currValidation(String curr)
     {
-        if (curr.equals("") &&
-                curr != ("KES") &&
-                curr != ("USD"))
+        if (curr.toString().trim().equals("") || curr.toString().trim().equals(null))
             return false;
+        if (curr.toString().trim().equals("KES") ||
+                curr.toString().trim().equals("USD"))
+            return true;
 
         else
-            return true;
+            return false;
 
 
     }
@@ -187,7 +188,8 @@ public class Validation {
                 case 400:
 
                     json = new String(response.data);//string
-                    Toast.makeText(mContext, "Missing value! Hash ID mismatch  please use the correct values", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, ""+json, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(mContext, "Missing value! Hash ID mismatch  please use the correct values", Toast.LENGTH_LONG).show();
                     break;
                 default:
                     Toast.makeText(mContext, "system error occurred! please try again", Toast.LENGTH_LONG).show();
@@ -219,7 +221,7 @@ public class Validation {
             message = "Connection TimeOut! Please check your internet connection.";
         }else {message = "unknown error!";}
 
-        Toast.makeText(mContext, "error "+message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, "error "+message, Toast.LENGTH_LONG).show();
 
     }
 

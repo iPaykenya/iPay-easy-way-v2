@@ -50,6 +50,8 @@ public class SID {
         crl         = data[9];
         hshkey      = data[12];
 
+        /** remove invalid characters from phone **/
+        tel = tel.replaceAll("[^0-9]", "");
 
         /** validate phone number **/
         if (Validation.phoneValidation(tel) == false) {
@@ -106,7 +108,7 @@ public class SID {
         if (mer.toString().trim() == "" || mer.toString().trim().equals(null)) mer = "ipay";
 
         /** generate oid if not passed **/
-        if (oid.toString().trim() == "" || oid.toString().trim().equals(null)) {
+        if (oid.toString().trim().equals("") || oid.toString().trim().equals(null)) {
             oid = Validation.orderID(vid, hshkey);
             inv = oid;
         }
