@@ -2,10 +2,9 @@ package PaymentChannel;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.ipay.ipay.CardActivity;
+import com.ipay.ipayClass.CardActivity;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

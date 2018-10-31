@@ -139,7 +139,7 @@ public class SID {
         parameters.put("p4", p4);
         parameters.put("cst", cst);
         parameters.put("cbk", cbk);
-        parameters.put("autopay", String.valueOf(1));
+        parameters.put("autopay", autopay);
         parameters.put("hash", hash);
 
 
